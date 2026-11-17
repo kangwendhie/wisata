@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f8f2">
-  <meta name="description" content="Panduan wisata Jawa Tengah berbasis referensi resmi: Candi Borobudur, Karimunjawa, Dataran Tinggi Dieng, dan Kota Lama Semarang. Temukan sejarah, daya tarik, akses, dan tips wisata.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a282d">
+  <meta name="description" content="Jelajahi Borobudur, Karimunjawa, Dataran Tinggi Dieng, dan Kota Lama Semarang. Panduan wisata Jawa Tengah dengan lokasi, daya tarik, tips perjalanan dan referensi resmi.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ruang Jelajah | Jelajahi Pesona Jawa Tengah">
-  <meta property="og:description" content="Informasi destinasi Jawa Tengah yang dilengkapi sumber resmi, rute, daya tarik, dan tips persiapan perjalanan.">
+  <meta property="og:title" content="Ruang Jelajah | Temukan Jawa Tengah dari Sisi Berbeda">
+  <meta property="og:description" content="Empat destinasi Jawa Tengah, satu panduan perjalanan. Informasi wisata berdasarkan sumber resmi dan tautan pengelola.">
   <meta property="og:locale" content="id_ID">
-  <title>Ruang Jelajah | Wisata Jawa Tengah yang Berkesan</title>
+  <title>Ruang Jelajah | Jelajahi Wisata Jawa Tengah</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- Tailwind v4 telah dikompilasi ke style.css, tanpa CDN dan tanpa JavaScript runtime. -->
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
-<body>
-  <a class="skip-link" href="#konten-utama">Langsung ke konten utama</a>
+<body class="bg-ivory font-sans text-ink antialiased selection:bg-coral selection:text-ink">
+  <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-xl focus:bg-white focus:px-5 focus:py-3 focus:text-ink" href="#konten-utama">Langsung ke konten utama</a>
 
-  <!-- Ikon SVG digunakan ulang agar tidak memerlukan library eksternal. -->
-  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+  <svg xmlns="http://www.w3.org/2000/svg" class="absolute size-0 overflow-hidden" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
@@ -36,243 +36,241 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
   </svg>
 
-  <header class="site-header" id="beranda">
-    <div class="container header-inner">
-      <a class="brand" href="#beranda" aria-label="Ruang Jelajah, kembali ke atas">
-        <span class="brand-icon"><svg class="icon"><use href="#i-compass"/></svg></span>
-        <span>ruang<span class="brand-accent">jelajah.</span></span>
+  <header id="beranda" class="site-header sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-white backdrop-blur-xl">
+    <div class="mx-auto flex h-[76px] w-[min(1180px,calc(100%-40px))] items-center justify-between gap-6">
+      <a href="#beranda" class="group inline-flex shrink-0 items-center gap-2.5" aria-label="Ruang Jelajah, ke beranda">
+        <span class="grid size-10 place-items-center rounded-full border border-white/30 text-coral transition-colors group-hover:bg-coral group-hover:text-ink"><svg class="icon size-5"><use href="#i-compass"/></svg></span>
+        <span class="font-display text-[18px] font-extrabold tracking-[-1px] sm:text-[21px]">ruang<span class="text-coral">jelajah.</span></span>
       </a>
-
-      <nav class="desktop-nav" aria-label="Navigasi utama">
-        <a href="#beranda" class="nav-current">Beranda</a>
-        <a href="#destinasi">Destinasi</a>
-        <a href="#panduan">Panduan Wisata</a>
-        <a href="#rencana">Rencana Trip</a>
+      <nav class="hidden items-center gap-8 text-[13px] font-semibold text-white/70 lg:flex" aria-label="Navigasi utama">
+        <a class="nav-link text-white" href="#beranda">Beranda</a>
+        <a class="nav-link" href="#destinasi">Destinasi</a>
+        <a class="nav-link" href="#panduan">Panduan Wisata</a>
+        <a class="nav-link" href="#rencana">Inspirasi Trip</a>
+        <a class="nav-link" href="#sumber">Sumber Data</a>
       </nav>
-
-      <a class="header-button" href="#rencana">Mulai Jelajah <svg class="icon"><use href="#i-up-right"/></svg></a>
-
-      <details class="mobile-menu">
-        <summary aria-label="Buka menu navigasi"><svg class="icon"><use href="#i-menu"/></svg></summary>
-        <nav class="mobile-nav" aria-label="Navigasi seluler">
-          <a href="#beranda">Beranda</a>
-          <a href="#destinasi">Destinasi</a>
-          <a href="#panduan">Panduan Wisata</a>
-          <a href="#rencana">Rencana Trip</a>
+      <a href="#destinasi" class="hidden items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:bg-white/10 lg:inline-flex">Mulai eksplorasi <svg class="icon size-4"><use href="#i-up-right"/></svg></a>
+      <details class="mobile-menu relative lg:hidden">
+        <summary class="grid size-11 cursor-pointer list-none place-items-center rounded-xl border border-white/25 text-white [&::-webkit-details-marker]:hidden" aria-label="Buka menu navigasi"><svg class="icon size-6"><use href="#i-menu"/></svg></summary>
+        <nav class="absolute right-0 top-[calc(100%+16px)] flex w-[min(290px,calc(100vw-40px))] flex-col gap-1 rounded-2xl border border-stone-200 bg-white p-3 text-ink shadow-2xl" aria-label="Navigasi seluler">
+          <a class="rounded-lg px-4 py-3 text-sm font-semibold hover:bg-ivory" href="#beranda">Beranda</a><a class="rounded-lg px-4 py-3 text-sm font-semibold hover:bg-ivory" href="#destinasi">Destinasi</a><a class="rounded-lg px-4 py-3 text-sm font-semibold hover:bg-ivory" href="#panduan">Panduan Wisata</a><a class="rounded-lg px-4 py-3 text-sm font-semibold hover:bg-ivory" href="#rencana">Inspirasi Trip</a><a class="rounded-lg px-4 py-3 text-sm font-semibold hover:bg-ivory" href="#sumber">Sumber Data</a>
         </nav>
       </details>
     </div>
   </header>
 
   <main id="konten-utama">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dash"></span> EXPLORE CENTRAL JAVA</p>
-          <h1 id="hero-title">Perjalanan hebat<br>dimulai dari <span>rasa ingin tahu.</span></h1>
-          <p class="hero-description">Kenali Borobudur, Karimunjawa, Dieng, dan Kota Lama Semarang melalui fakta destinasi, panduan kunjungan, serta referensi dari lembaga resmi.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#destinasi">Jelajahi Destinasi <svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a class="text-button" href="#pengalaman">Lihat pengalaman <span aria-hidden="true">↗</span></a>
+    <section class="hero-surface relative isolate overflow-hidden bg-ink text-white">
+      <div class="hero-glow pointer-events-none absolute -left-40 -top-48 size-[600px] rounded-full opacity-45 blur-[90px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-20 top-24 size-[480px] rounded-full border border-white/10" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-52 top-[-80px] size-[760px] rounded-full border border-white/5" aria-hidden="true"></div>
+      <div class="relative mx-auto grid w-[min(1180px,calc(100%-40px))] items-center gap-12 pb-14 pt-14 lg:min-h-[680px] lg:grid-cols-[1fr_1.04fr] lg:gap-14 lg:pb-20 lg:pt-12">
+        <div class="relative z-10 max-w-[610px]">
+          <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.2em] text-coral sm:text-xs"><span class="size-1.5 rounded-full bg-coral"></span> Discover Central Java <svg class="icon size-3.5 text-white/60"><use href="#i-up-right"/></svg></div>
+          <h1 class="font-display text-[clamp(45px,5.1vw,77px)] font-extrabold leading-[1.1] tracking-[-0.065em]">Jawa Tengah,<br><span class="text-coral">selalu punya</span><br>cerita baru.</h1>
+          <p class="mt-7 max-w-[520px] text-[14px] leading-[1.9] text-white/65 sm:text-[16px]">Jelajahi warisan budaya, pulau tropis, pegunungan, dan sudut kota bersejarah. Semua dilengkapi panduan destinasi dan sumber informasi yang dapat diperiksa.</p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a class="group inline-flex items-center gap-3 rounded-full bg-coral px-6 py-4 text-[13px] font-extrabold text-ink shadow-[0_10px_36px_rgba(250,183,118,.23)] transition-transform hover:-translate-y-1 hover:bg-coral-light" href="#destinasi">Jelajahi destinasi <svg class="icon size-4 transition-transform group-hover:translate-x-1"><use href="#i-arrow"/></svg></a>
+            <a class="inline-flex items-center gap-2 border-b border-white/40 pb-1 text-[13px] font-semibold text-white transition-colors hover:border-coral hover:text-coral" href="#panduan">Lihat panduan lengkap <svg class="icon size-4"><use href="#i-up-right"/></svg></a>
           </div>
-          <div class="hero-social-proof">
-            <div class="proof-icon-set" aria-hidden="true"><span><svg class="icon"><use href="#i-sun"/></svg></span><span><svg class="icon"><use href="#i-wave"/></svg></span><span><svg class="icon"><use href="#i-camera"/></svg></span></div>
-            <p><strong>Alam. Budaya. Cerita.</strong><br>Semua ada dalam satu perjalanan.</p>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-orbit" aria-hidden="true"></div>
-          <div class="hero-photo" role="img" aria-label="Ilustrasi atau foto pemandangan pulau tropis Karimunjawa di Jawa Tengah">
-            <div class="hero-photo-shade"></div>
-            <div class="hero-photo-tag"><svg class="icon"><use href="#i-pin"/></svg> Karimunjawa, Jepara</div>
-          </div>
-          <div class="floating-note">
-            <span class="note-icon"><svg class="icon"><use href="#i-compass"/></svg></span>
-            <span><strong>Temukan tempat baru</strong><small>Mulai dari yang terdekat</small></span>
-            <svg class="icon note-arrow"><use href="#i-up-right"/></svg>
-          </div>
-          <span class="visual-deco deco-one" aria-hidden="true">✳</span>
-        </div>
-      </div>
-      <div class="container hero-bottom"><span>SCROLL UNTUK MENJELAJAH</span><span class="scroll-line" aria-hidden="true"></span><span>01 / 04</span></div>
-    </section>
-
-    <section class="promise" aria-label="Keunggulan inspirasi perjalanan">
-      <div class="container promise-grid">
-        <div class="promise-item"><span class="promise-icon"><svg class="icon"><use href="#i-compass"/></svg></span><div><h2>Destinasi pilihan</h2><p>Ringkasan destinasi beserta tautan referensi tepercaya.</p></div></div>
-        <div class="promise-item"><span class="promise-icon"><svg class="icon"><use href="#i-star"/></svg></span><div><h2>Pengalaman berkesan</h2><p>Eksplorasi alam, sejarah, dan budaya setempat.</p></div></div>
-        <div class="promise-item"><span class="promise-icon"><svg class="icon"><use href="#i-leaf"/></svg></span><div><h2>Jelajah lebih bijak</h2><p>Hormati budaya dan jaga lingkungan saat berwisata.</p></div></div>
-      </div>
-    </section>
-
-    <section class="section destinations" id="destinasi" aria-labelledby="destination-title">
-      <div class="container">
-        <div class="section-heading heading-between">
-          <div><span class="section-label">PILIH TUJUANMU</span><h2 id="destination-title">Temukan tempat yang <em>ingin kamu ceritakan.</em></h2></div>
-          <p>Empat destinasi unggulan dengan informasi sejarah, lokasi, aktivitas, akses, dan sumber resmi yang bisa diperiksa.</p>
-        </div>
-        <div class="destination-grid">
-          <article class="destination-card">
-            <div class="destination-image photo-borobudur" role="img" aria-label="Candi Borobudur, Magelang"><span class="destination-category">Sejarah & Budaya</span><span class="image-number">01</span></div>
-            <div class="destination-detail"><div><p class="location"><svg class="icon"><use href="#i-pin"/></svg> Magelang, Jawa Tengah</p><h3>Candi Borobudur</h3><p>Warisan Buddha abad VIII–IX dengan relief dan 72 stupa berlubang.</p></div><a href="#borobudur" class="card-action" aria-label="Baca panduan faktual Candi Borobudur"><svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          </article>
-          <article class="destination-card">
-            <div class="destination-image photo-karimunjawa" role="img" aria-label="Pantai dan perairan Karimunjawa"><span class="destination-category">Pantai & Pulau</span><span class="image-number">02</span></div>
-            <div class="destination-detail"><div><p class="location"><svg class="icon"><use href="#i-pin"/></svg> Jepara, Jawa Tengah</p><h3>Karimunjawa</h3><p>Kawasan konservasi bahari dengan terumbu karang dan mangrove.</p></div><a href="#karimunjawa" class="card-action" aria-label="Baca panduan faktual Karimunjawa"><svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          </article>
-          <article class="destination-card">
-            <div class="destination-image photo-dieng" role="img" aria-label="Telaga Warna dan perbukitan Dieng"><span class="destination-category">Alam & Pegunungan</span><span class="image-number">03</span></div>
-            <div class="destination-detail"><div><p class="location"><svg class="icon"><use href="#i-pin"/></svg> Wonosobo &amp; Banjarnegara</p><h3>Dataran Tinggi Dieng</h3><p>Dataran vulkanik dengan kawah, telaga, dan candi Hindu kuno.</p></div><a href="#dieng" class="card-action" aria-label="Baca panduan faktual Dataran Tinggi Dieng"><svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          </article>
-          <article class="destination-card">
-            <div class="destination-image photo-semarang" role="img" aria-label="Bangunan bersejarah di Kota Lama Semarang"><span class="destination-category">Kota & Arsitektur</span><span class="image-number">04</span></div>
-            <div class="destination-detail"><div><p class="location"><svg class="icon"><use href="#i-pin"/></svg> Semarang, Jawa Tengah</p><h3>Kota Lama Semarang</h3><p>Jejak arsitektur kolonial, Gereja Blenduk, dan Taman Srigunting.</p></div><a href="#kota-lama" class="card-action" aria-label="Baca panduan faktual Kota Lama Semarang"><svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          </article>
-        </div>
-        <div class="destinations-footer"><p><svg class="icon"><use href="#i-star"/></svg> Informasi dirangkum dari sumber pengelola, instansi pemerintah, dan UNESCO.</p><a href="#panduan" class="inline-link">Baca panduan lengkap <svg class="icon"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </section>
-
-
-    <!-- Panduan objek wisata: informasi sumber resmi, dikaji 17 November 2026. -->
-    <section class="section destination-guide" id="panduan" aria-labelledby="guide-title">
-      <div class="container">
-        <div class="section-heading guide-heading">
-          <span class="section-label">PANDUAN DESTINASI TERPILIH</span>
-          <h2 id="guide-title">Kenali destinasi sebelum <em>merencanakan perjalanan.</em></h2>
-          <p>Informasi berikut mengutamakan fakta yang dapat ditelusuri. Data praktis seperti tiket, ketersediaan layanan, jadwal kapal, serta penutupan kawasan dapat berubah sewaktu-waktu.</p>
-          <div class="guide-jump" aria-label="Lompat ke detail destinasi">
-            <a href="#borobudur">Borobudur</a><a href="#karimunjawa">Karimunjawa</a><a href="#dieng">Dieng</a><a href="#kota-lama">Kota Lama</a>
+          <div class="mt-12 flex flex-wrap gap-x-9 gap-y-5 border-t border-white/15 pt-7">
+            <div><strong class="font-display text-3xl font-extrabold text-white">04</strong><p class="mt-1 text-[11px] text-white/55">Destinasi terpilih</p></div>
+            <div><strong class="font-display text-3xl font-extrabold text-white">02</strong><p class="mt-1 text-[11px] text-white/55">Alam &amp; budaya</p></div>
+            <div><strong class="flex items-center gap-2 pt-1 text-[13px] font-bold text-white"><svg class="icon size-5 text-coral"><use href="#i-check"/></svg> Fakta terverifikasi</strong><p class="mt-2 text-[11px] text-white/55">Referensi lembaga resmi</p></div>
           </div>
         </div>
-
-        <article class="guide-card" id="borobudur" aria-labelledby="borobudur-title">
-          <div class="guide-cover photo-borobudur" role="img" aria-label="Visual Candi Borobudur dengan bentuk candi dan stupa"></div>
-          <div class="guide-content">
-            <div class="guide-kicker"><span>01 / WARISAN BUDAYA</span><span class="guide-status">UNESCO WORLD HERITAGE</span></div>
-            <h3 id="borobudur-title">Candi Borobudur</h3>
-            <p class="guide-summary">Borobudur merupakan candi Buddha yang dibangun pada abad ke-8 hingga ke-9 pada masa Wangsa Syailendra. Bangunan utamanya memiliki lima teras bujur sangkar, tiga pelataran melingkar, dan sebuah stupa utama. UNESCO mencatat 72 stupa berlubang pada pelataran melingkarnya.</p>
-            <dl class="guide-facts">
-              <div><dt>Lokasi</dt><dd>Desa Borobudur, Kecamatan Borobudur, Kabupaten Magelang, Jawa Tengah</dd></div>
-              <div><dt>Daya tarik</dt><dd>Relief batu, stupa, arsitektur Buddha, serta kawasan Candi Mendut dan Pawon</dd></div>
-              <div><dt>Kegiatan</dt><dd>Mempelajari sejarah dan seni relief, wisata edukasi, fotografi sesuai ketentuan</dd></div>
-              <div><dt>Akses</dt><dd>Perjalanan darat menuju kawasan Borobudur di Kabupaten Magelang</dd></div>
-            </dl>
-            <div class="guide-alert"><strong>Perhatikan jenis tiket.</strong> Pengelola membedakan tiket <em>pelataran</em> dan tiket <em>naik candi</em>. Tiket pelataran tidak mencakup akses ke struktur candi. Periksa kuota, persyaratan, dan pilihan tanggal di situs resmi sebelum berkunjung.</div>
-            <div class="guide-links"><a class="guide-link primary" href="https://ticket.borobudurpark.com/id/" target="_blank" rel="noopener noreferrer">Tiket resmi <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://whc.unesco.org/en/list/592/" target="_blank" rel="noopener noreferrer">Profil UNESCO <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Candi+Borobudur+Magelang" target="_blank" rel="noopener noreferrer">Lihat peta <svg class="icon"><use href="#i-pin"/></svg></a></div>
+        <div class="hero-collage relative mx-auto grid h-[440px] w-full max-w-[580px] grid-cols-[1.15fr_.85fr] grid-rows-2 gap-3 sm:h-[510px] sm:gap-4 lg:ml-auto lg:h-[565px]">
+          <div class="photo-tile photo-karimunjawa group relative row-span-2 overflow-hidden rounded-[26px] sm:rounded-[34px]">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+            <span class="absolute left-5 top-5 rounded-full border border-white/35 bg-white/20 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur-lg">PULAU &amp; LAUT</span>
+            <div class="absolute bottom-6 left-5 right-5"><span class="flex items-center gap-1.5 text-[11px] font-medium text-white/80"><svg class="icon size-3.5"><use href="#i-pin"/></svg> Jepara</span><h2 class="mt-1 font-display text-[25px] font-extrabold text-white sm:text-[31px]">Karimunjawa</h2></div>
           </div>
-        </article>
-
-        <article class="guide-card" id="karimunjawa" aria-labelledby="karimunjawa-title">
-          <div class="guide-cover photo-karimunjawa" role="img" aria-label="Visual pantai dan kawasan laut Karimunjawa"></div>
-          <div class="guide-content">
-            <div class="guide-kicker"><span>02 / WISATA BAHARI</span><span class="guide-status">TAMAN NASIONAL</span></div>
-            <h3 id="karimunjawa-title">Kepulauan Karimunjawa</h3>
-            <p class="guide-summary">Karimunjawa berada di Laut Jawa dan termasuk wilayah Kabupaten Jepara. Taman nasional ini melindungi ekosistem perairan, terumbu karang, hutan mangrove, dan hutan tropis dataran rendah. Kawasan ini dikelola dengan sistem zonasi konservasi.</p>
-            <dl class="guide-facts">
-              <div><dt>Lokasi</dt><dd>Kecamatan Karimunjawa, Kabupaten Jepara, Jawa Tengah</dd></div>
-              <div><dt>Daya tarik</dt><dd>Pantai pasir putih, terumbu karang, ekosistem mangrove, dan keanekaragaman ikan karang</dd></div>
-              <div><dt>Kegiatan</dt><dd>Snorkeling pada zona yang diizinkan, wisata pantai, pengamatan alam, dan edukasi konservasi</dd></div>
-              <div><dt>Akses</dt><dd>Perjalanan laut dari Pelabuhan Kartini, Jepara, menuju Karimunjawa; jadwal mengikuti operator kapal dan kondisi cuaca</dd></div>
-            </dl>
-            <div class="guide-alert"><strong>Utamakan keselamatan dan konservasi.</strong> Periksa keberangkatan kapal, kondisi gelombang, dan ketentuan zona kunjungan. Jangan menginjak atau mengambil terumbu karang, serta ikuti arahan petugas dan pemandu.</div>
-            <div class="guide-links"><a class="guide-link primary" href="https://tnkarimunjawa.id/profil/index" target="_blank" rel="noopener noreferrer">Balai taman nasional <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://ksdae.kehutanan.go.id/kawasan-konservasi/100242018/" target="_blank" rel="noopener noreferrer">Profil konservasi <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Karimunjawa+Jepara" target="_blank" rel="noopener noreferrer">Lihat peta <svg class="icon"><use href="#i-pin"/></svg></a></div>
+          <div class="photo-tile photo-borobudur group relative overflow-hidden rounded-[26px] sm:rounded-[34px]">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-5 left-4 right-4"><span class="text-[10px] text-white/70">Warisan Dunia</span><h2 class="font-display text-[18px] font-extrabold text-white sm:text-[23px]">Borobudur</h2></div>
           </div>
-        </article>
-
-        <article class="guide-card" id="dieng" aria-labelledby="dieng-title">
-          <div class="guide-cover photo-dieng" role="img" aria-label="Visual telaga dan perbukitan Dieng"></div>
-          <div class="guide-content">
-            <div class="guide-kicker"><span>03 / DATARAN TINGGI</span><span class="guide-status">KAWASAN VULKANIK</span></div>
-            <h3 id="dieng-title">Dataran Tinggi Dieng</h3>
-            <p class="guide-summary">Dieng merupakan dataran tinggi vulkanik di wilayah Kabupaten Wonosobo dan Kabupaten Banjarnegara dengan elevasi sekitar 2.000–2.100 meter di atas permukaan laut. Kawasan ini terkenal karena kombinasi bentang alam vulkanik dan peninggalan sejarah Hindu.</p>
-            <dl class="guide-facts">
-              <div><dt>Lokasi</dt><dd>Wilayah Kabupaten Wonosobo dan Banjarnegara, Jawa Tengah</dd></div>
-              <div><dt>Daya tarik</dt><dd>Kompleks Candi Arjuna, Kawah Sikidang, Telaga Warna, dan perbukitan</dd></div>
-              <div><dt>Kegiatan</dt><dd>Wisata geologi, pengamatan lanskap, kunjungan candi, dan belajar budaya lokal</dd></div>
-              <div><dt>Akses</dt><dd>Umumnya melalui jalur darat dari Wonosobo ke kawasan Dieng; jalan pegunungan menanjak dan berkelok</dd></div>
-            </dl>
-            <div class="guide-alert"><strong>Waspadai kondisi kawah.</strong> Dieng memiliki aktivitas vulkanik. Patuhi zona aman, papan larangan, pemberitahuan petugas, serta informasi resmi terkait kondisi gas kawah dan cuaca. Siapkan pakaian hangat.</div>
-            <div class="guide-links"><a class="guide-link primary" href="https://www.indonesia.travel/id/id/destination/java/central-java/dataran-tinggi-dieng" target="_blank" rel="noopener noreferrer">Panduan pariwisata resmi <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Dataran+Tinggi+Dieng" target="_blank" rel="noopener noreferrer">Lihat peta <svg class="icon"><use href="#i-pin"/></svg></a></div>
+          <div class="photo-tile photo-dieng group relative overflow-hidden rounded-[26px] sm:rounded-[34px]">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-5 left-4 right-4"><span class="text-[10px] text-white/70">Dataran Tinggi</span><h2 class="font-display text-[18px] font-extrabold text-white sm:text-[23px]">Dieng</h2></div>
           </div>
-        </article>
-
-        <article class="guide-card" id="kota-lama" aria-labelledby="kotalama-title">
-          <div class="guide-cover photo-semarang" role="img" aria-label="Visual kawasan bangunan bersejarah Kota Lama Semarang"></div>
-          <div class="guide-content">
-            <div class="guide-kicker"><span>04 / WISATA HERITAGE</span><span class="guide-status">CAGAR BUDAYA KOTA</span></div>
-            <h3 id="kotalama-title">Kota Lama Semarang</h3>
-            <p class="guide-summary">Kota Lama Semarang merupakan kawasan bersejarah yang dikenal dengan peninggalan arsitektur masa kolonial. Salah satu bangunan pentingnya adalah Gereja Blenduk atau GPIB Immanuel. Catatan cagar budaya Kota Semarang menelusuri bangunan awal gereja ini hingga tahun 1753.</p>
-            <dl class="guide-facts">
-              <div><dt>Lokasi</dt><dd>Kawasan sekitar Jalan Letjen Suprapto, Semarang Utara, Kota Semarang, Jawa Tengah</dd></div>
-              <div><dt>Daya tarik</dt><dd>Gereja Blenduk, Taman Srigunting, dan deretan bangunan cagar budaya</dd></div>
-              <div><dt>Kegiatan</dt><dd>Wisata jalan kaki, belajar sejarah kota, fotografi arsitektur, dan kuliner sekitar</dd></div>
-              <div><dt>Akses</dt><dd>Dapat dicapai melalui perjalanan darat menuju kawasan Kota Lama Semarang</dd></div>
-            </dl>
-            <div class="guide-alert"><strong>Hormati bangunan dan kegiatan warga.</strong> Kawasan jalan dan ruang publik berbeda dari bangunan yang memiliki aturan masuk masing-masing. Gereja Blenduk masih digunakan untuk kegiatan keagamaan; jaga ketertiban dan ikuti ketentuan setempat.</div>
-            <div class="guide-links"><a class="guide-link primary" href="https://cagarbudaya.semarangkota.go.id/page/halaman/122" target="_blank" rel="noopener noreferrer">Data cagar budaya <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://pariwisata.semarangkota.go.id/frontend/web/index.php?id=105&amp;r=site%2Fdaya-tarik-wisata-description" target="_blank" rel="noopener noreferrer">Dinas pariwisata <svg class="icon"><use href="#i-up-right"/></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kota+Lama+Semarang" target="_blank" rel="noopener noreferrer">Lihat peta <svg class="icon"><use href="#i-pin"/></svg></a></div>
-          </div>
-        </article>
-        <p class="guide-disclaimer"><svg class="icon"><use href="#i-check"/></svg> Fakta dirangkum dari situs pemerintah, Balai Taman Nasional, pengelola tiket, dan UNESCO. Pemeriksaan referensi: <strong>17 November 2026</strong>. Konten ini bukan situs resmi pengelola dan tidak melayani transaksi.</p>
-      </div>
-    </section>
-
-    <section class="experience-section" id="pengalaman" aria-labelledby="experience-title">
-      <div class="container experience-layout">
-        <div class="experience-visual">
-          <div class="experience-photo" role="img" aria-label="Panorama danau dan perbukitan di Dataran Tinggi Dieng"></div>
-          <div class="experience-stamp"><span>TAKE THE</span><strong>SCENIC<br>ROUTE</strong><svg class="icon"><use href="#i-up-right"/></svg></div>
-        </div>
-        <div class="experience-copy">
-          <span class="section-label section-label-light">LEBIH DARI SEKADAR LIBURAN</span>
-          <h2 id="experience-title">Bukan hanya melihat. <em>Rasakan setiap momennya.</em></h2>
-          <p class="experience-intro">Perjalanan yang bermakna memberi ruang untuk mengenal tempat, berjumpa dengan budaya, dan membawa pulang pengalaman baru.</p>
-          <div class="experience-features">
-            <div class="experience-feature"><span class="feature-number">01</span><div><h3>Dekat dengan alam</h3><p>Nikmati pemandangan dengan tetap menjaga kebersihan dan kelestarian lingkungan.</p></div><svg class="icon"><use href="#i-up-right"/></svg></div>
-            <div class="experience-feature"><span class="feature-number">02</span><div><h3>Kenali budaya lokal</h3><p>Cicipi kuliner daerah dan hargai tradisi masyarakat yang kamu kunjungi.</p></div><svg class="icon"><use href="#i-up-right"/></svg></div>
-            <div class="experience-feature"><span class="feature-number">03</span><div><h3>Abadikan cerita</h3><p>Temukan sudut menarik dan dokumentasikan momen tanpa mengganggu orang lain.</p></div><svg class="icon"><use href="#i-up-right"/></svg></div>
-          </div>
-          <a href="#rencana" class="button button-light">Susun pengalamanmu <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a href="#destinasi" class="absolute -bottom-5 left-[40%] flex items-center gap-3 rounded-2xl border border-white/80 bg-white px-4 py-3.5 text-ink shadow-[0_18px_45px_rgba(0,0,0,.18)] transition-transform hover:-translate-y-1 sm:left-[42%] sm:px-5 sm:py-4"><span class="grid size-9 place-items-center rounded-full bg-mint text-forest"><svg class="icon size-4"><use href="#i-compass"/></svg></span><span class="text-[11px] font-extrabold sm:text-[12px]">Mulai petualangan <small class="mt-0.5 block font-normal text-slate-500">4 pilihan wisata</small></span><svg class="icon size-4 text-forest"><use href="#i-up-right"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="section itinerary" id="rencana" aria-labelledby="itinerary-title">
-      <div class="container">
-        <div class="section-heading centered"><span class="section-label">PERJALANAN JADI LEBIH MUDAH</span><h2 id="itinerary-title">Tidak tahu mulai dari mana? <em>Coba ide trip ini.</em></h2><p>Pilih gambaran rute sesuai waktumu, lalu sesuaikan dengan kondisi dan jadwal setempat.</p></div>
-        <div class="trip-grid">
-          <article class="trip-card"><div class="trip-top"><span class="trip-number">01 / HERITAGE</span><span class="trip-duration"><svg class="icon"><use href="#i-clock"/></svg> 1 Hari</span></div><div class="trip-art trip-art-heritage" aria-hidden="true"><svg class="icon"><use href="#i-sun"/></svg></div><h3>Sehari di Magelang</h3><p>Jelajahi kawasan Borobudur, nikmati kuliner lokal, dan mampir ke desa sekitar.</p><a href="#tips">Tips persiapan <svg class="icon"><use href="#i-arrow"/></svg></a></article>
-          <article class="trip-card trip-card-highlight"><div class="trip-top"><span class="trip-number">02 / CITY WALK</span><span class="trip-duration"><svg class="icon"><use href="#i-clock"/></svg> 2 Hari</span></div><div class="trip-art trip-art-city" aria-hidden="true"><svg class="icon"><use href="#i-camera"/></svg></div><h3>Akhir Pekan di Semarang</h3><p>Jalan santai di Kota Lama, eksplorasi ruang kreatif, lalu berburu kuliner khas.</p><a href="#tips">Tips persiapan <svg class="icon"><use href="#i-arrow"/></svg></a></article>
-          <article class="trip-card"><div class="trip-top"><span class="trip-number">03 / ISLAND ESCAPE</span><span class="trip-duration"><svg class="icon"><use href="#i-clock"/></svg> 3 Hari*</span></div><div class="trip-art trip-art-island" aria-hidden="true"><svg class="icon"><use href="#i-wave"/></svg></div><h3>Liburan ke Karimunjawa</h3><p>Nikmati suasana pulau dan pantai. Atur perjalanan sesuai kondisi cuaca serta jadwal kapal.</p><a href="#tips">Tips persiapan <svg class="icon"><use href="#i-arrow"/></svg></a></article>
+    <section class="border-b border-[#e9e8df] bg-white" aria-label="Keunggulan panduan wisata">
+      <div class="mx-auto grid w-[min(1180px,calc(100%-40px))] grid-cols-1 divide-y divide-[#eeeae1] py-6 md:grid-cols-3 md:divide-x md:divide-y-0 md:py-7">
+        <div class="flex items-center gap-3 py-3 md:pr-6"><span class="grid size-11 shrink-0 place-items-center rounded-xl bg-mint text-forest"><svg class="icon size-5"><use href="#i-compass"/></svg></span><div><h2 class="text-[13px] font-extrabold">Destinasi pilihan</h2><p class="mt-1 text-[11px] text-slate-500">Alam, sejarah, dan budaya</p></div></div>
+        <div class="flex items-center gap-3 py-3 md:px-6"><span class="grid size-11 shrink-0 place-items-center rounded-xl bg-[#fff0dc] text-[#9b642e]"><svg class="icon size-5"><use href="#i-star"/></svg></span><div><h2 class="text-[13px] font-extrabold">Panduan faktual</h2><p class="mt-1 text-[11px] text-slate-500">Sumber resmi mudah ditelusuri</p></div></div>
+        <div class="flex items-center gap-3 py-3 md:pl-6"><span class="grid size-11 shrink-0 place-items-center rounded-xl bg-[#e6f3ef] text-teal"><svg class="icon size-5"><use href="#i-leaf"/></svg></span><div><h2 class="text-[13px] font-extrabold">Berwisata bertanggung jawab</h2><p class="mt-1 text-[11px] text-slate-500">Jaga alam dan hormati budaya</p></div></div>
+      </div>
+    </section>
+
+    <section id="destinasi" class="section-anchor mx-auto w-[min(1180px,calc(100%-40px))] py-20 sm:py-24" aria-labelledby="destinasi-title">
+      <div class="mb-9 flex flex-col justify-between gap-5 md:mb-11 md:flex-row md:items-end">
+        <div class="max-w-[720px]"><p class="eyebrow"><span class="eyebrow-dot"></span> PILIH DESTINASIMU</p><h2 id="destinasi-title" class="mt-5 font-display text-[clamp(31px,3.5vw,49px)] font-extrabold leading-[1.2] tracking-[-0.055em]">Empat tempat, <span class="text-teal">ribuan alasan</span><br class="hidden sm:block"> untuk berangkat.</h2></div>
+        <p class="max-w-[340px] text-[13px] leading-7 text-slate-500">Setiap destinasi punya karakter berbeda. Temukan yang paling sesuai dengan minat perjalananmu.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
+        <a class="destination-tile photo-borobudur group relative isolate flex min-h-[335px] flex-col justify-between overflow-hidden rounded-[27px] p-6 text-white sm:min-h-[360px] lg:col-span-7 lg:min-h-[430px] lg:p-8" href="#borobudur" aria-label="Lihat panduan Candi Borobudur">
+          <div class="tile-overlay absolute inset-0 -z-10"></div><div class="flex items-start justify-between"><span class="rounded-full border border-white/30 bg-white/20 px-3 py-2 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Sejarah &amp; Budaya</span><span class="grid size-11 place-items-center rounded-full border border-white/40 bg-white/15 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><svg class="icon size-5"><use href="#i-up-right"/></svg></span></div>
+          <div><p class="mb-1 flex items-center gap-1 text-xs text-white/80"><svg class="icon size-3.5"><use href="#i-pin"/></svg> Magelang, Jawa Tengah</p><h3 class="font-display text-[32px] font-extrabold tracking-[-0.045em] sm:text-[37px]">Candi Borobudur</h3><p class="mt-2 max-w-[460px] text-[12px] leading-6 text-white/85">Candi Buddha abad ke-8 hingga ke-9 dengan stupa dan relief bersejarah.</p></div>
+        </a>
+        <a class="destination-tile photo-karimunjawa group relative isolate flex min-h-[335px] flex-col justify-between overflow-hidden rounded-[27px] p-6 text-white sm:min-h-[360px] lg:col-span-5 lg:p-8" href="#karimunjawa" aria-label="Lihat panduan Kepulauan Karimunjawa">
+          <div class="tile-overlay absolute inset-0 -z-10"></div><div class="flex items-start justify-between"><span class="rounded-full border border-white/30 bg-white/20 px-3 py-2 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Pantai &amp; Pulau</span><span class="grid size-11 place-items-center rounded-full border border-white/40 bg-white/15 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><svg class="icon size-5"><use href="#i-up-right"/></svg></span></div>
+          <div><p class="mb-1 flex items-center gap-1 text-xs text-white/80"><svg class="icon size-3.5"><use href="#i-pin"/></svg> Jepara, Jawa Tengah</p><h3 class="font-display text-[32px] font-extrabold tracking-[-0.045em] sm:text-[37px]">Karimunjawa</h3><p class="mt-2 max-w-[380px] text-[12px] leading-6 text-white/85">Kepulauan tropis dengan ekosistem mangrove dan terumbu karang.</p></div>
+        </a>
+        <a class="destination-tile photo-dieng group relative isolate flex min-h-[335px] flex-col justify-between overflow-hidden rounded-[27px] p-6 text-white sm:min-h-[360px] lg:col-span-5 lg:p-8" href="#dieng" aria-label="Lihat panduan Dataran Tinggi Dieng">
+          <div class="tile-overlay absolute inset-0 -z-10"></div><div class="flex items-start justify-between"><span class="rounded-full border border-white/30 bg-white/20 px-3 py-2 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Alam &amp; Pegunungan</span><span class="grid size-11 place-items-center rounded-full border border-white/40 bg-white/15 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><svg class="icon size-5"><use href="#i-up-right"/></svg></span></div>
+          <div><p class="mb-1 flex items-center gap-1 text-xs text-white/80"><svg class="icon size-3.5"><use href="#i-pin"/></svg> Wonosobo &amp; Banjarnegara</p><h3 class="font-display text-[32px] font-extrabold tracking-[-0.045em] sm:text-[37px]">Dataran Tinggi Dieng</h3><p class="mt-2 max-w-[380px] text-[12px] leading-6 text-white/85">Bentang vulkanik yang menyimpan telaga, kawah, dan candi kuno.</p></div>
+        </a>
+        <a class="destination-tile photo-semarang group relative isolate flex min-h-[335px] flex-col justify-between overflow-hidden rounded-[27px] p-6 text-white sm:min-h-[360px] lg:col-span-7 lg:p-8" href="#kota-lama" aria-label="Lihat panduan Kota Lama Semarang">
+          <div class="tile-overlay absolute inset-0 -z-10"></div><div class="flex items-start justify-between"><span class="rounded-full border border-white/30 bg-white/20 px-3 py-2 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Arsitektur &amp; Kota</span><span class="grid size-11 place-items-center rounded-full border border-white/40 bg-white/15 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><svg class="icon size-5"><use href="#i-up-right"/></svg></span></div>
+          <div><p class="mb-1 flex items-center gap-1 text-xs text-white/80"><svg class="icon size-3.5"><use href="#i-pin"/></svg> Kota Semarang</p><h3 class="font-display text-[32px] font-extrabold tracking-[-0.045em] sm:text-[37px]">Kota Lama Semarang</h3><p class="mt-2 max-w-[460px] text-[12px] leading-6 text-white/85">Bangunan cagar budaya, Gereja Blenduk, dan ruang publik bersejarah.</p></div>
+        </a>
+      </div>
+      <div class="mt-7 flex flex-col items-start justify-between gap-3 border-b border-[#dce7e1] pb-7 sm:flex-row sm:items-center"><p class="flex items-center gap-2 text-[12px] text-slate-500"><svg class="icon size-4 text-teal"><use href="#i-check"/></svg> Informasi berdasarkan sumber resmi, bukan penawaran paket wisata.</p><a class="inline-flex items-center gap-2 text-[12px] font-extrabold text-forest hover:text-teal" href="#panduan">Baca panduan destinasi <svg class="icon size-4"><use href="#i-arrow"/></svg></a></div>
+    </section>
+
+    <section class="bg-[#eaf2ed] py-19 sm:py-24" id="pengalaman" aria-labelledby="pengalaman-title">
+      <div class="mx-auto grid w-[min(1180px,calc(100%-40px))] items-center gap-10 lg:grid-cols-[.94fr_1.06fr] lg:gap-20">
+        <div class="photo-dieng experience-visual relative min-h-[360px] overflow-hidden rounded-[30px] sm:min-h-[500px]"><div class="absolute inset-0 bg-gradient-to-t from-ink/65 to-transparent"></div><div class="absolute bottom-7 left-7 right-7 flex items-end justify-between text-white"><div><span class="text-[11px] font-bold uppercase tracking-widest text-white/75">Feel the journey</span><p class="mt-2 font-display text-[25px] font-extrabold leading-[1.2]">Lebih dekat<br>dengan alam.</p></div><span class="grid size-12 place-items-center rounded-full border border-white/60"><svg class="icon size-5"><use href="#i-up-right"/></svg></span></div></div>
+        <div><p class="eyebrow"><span class="eyebrow-dot"></span> PENGALAMAN YANG BERARTI</p><h2 id="pengalaman-title" class="mt-5 max-w-[550px] font-display text-[clamp(32px,3.5vw,51px)] font-extrabold leading-[1.18] tracking-[-0.055em]">Bukan sekadar melihat. <span class="text-teal">Rasakan perjalanannya.</span></h2><p class="mt-6 max-w-[520px] text-[13px] leading-8 text-slate-600">Setiap tempat menawarkan pengalaman yang berbeda. Kenali kehidupan lokal, pelajari warisan budaya, dan nikmati keindahan alam tanpa mengabaikan kelestariannya.</p>
+          <div class="mt-8 space-y-0 border-t border-[#cbded3]">
+            <div class="flex items-center gap-5 border-b border-[#cbded3] py-5"><span class="font-display text-sm font-extrabold text-teal">01</span><span class="flex-1 text-[14px] font-extrabold">Nikmati alam dengan bertanggung jawab</span><svg class="icon size-4 text-teal"><use href="#i-up-right"/></svg></div>
+            <div class="flex items-center gap-5 border-b border-[#cbded3] py-5"><span class="font-display text-sm font-extrabold text-teal">02</span><span class="flex-1 text-[14px] font-extrabold">Hargai budaya dan tradisi setempat</span><svg class="icon size-4 text-teal"><use href="#i-up-right"/></svg></div>
+            <div class="flex items-center gap-5 border-b border-[#cbded3] py-5"><span class="font-display text-sm font-extrabold text-teal">03</span><span class="flex-1 text-[14px] font-extrabold">Dokumentasikan tanpa merusak situs</span><svg class="icon size-4 text-teal"><use href="#i-up-right"/></svg></div>
+          </div><a href="#rencana" class="mt-8 inline-flex items-center gap-3 rounded-full bg-forest px-6 py-4 text-[12px] font-extrabold text-white transition-colors hover:bg-teal">Lihat inspirasi perjalanan <svg class="icon size-4"><use href="#i-arrow"/></svg></a>
         </div>
-        <p class="trip-footnote">*Durasi hanya contoh rancangan perjalanan, bukan paket wisata atau jaminan transportasi.</p>
       </div>
     </section>
 
-    <section class="tips-section" id="tips" aria-labelledby="tips-title">
-      <div class="container tips-layout">
-        <div class="tips-copy"><span class="section-label">SEBELUM BERANGKAT</span><h2 id="tips-title">Perjalanan nyaman dimulai dari <em>persiapan sederhana.</em></h2><p>Hal penting yang perlu kamu cek sebelum mengunjungi destinasi pilihan.</p><div class="tips-pills"><span><svg class="icon"><use href="#i-check"/></svg> Cek cuaca</span><span><svg class="icon"><use href="#i-check"/></svg> Pastikan jam kunjung</span><span><svg class="icon"><use href="#i-check"/></svg> Siapkan transportasi</span></div></div>
-        <div class="faq-box"><details><summary>Apakah ada layanan pemesanan wisata di situs ini? <svg class="icon"><use href="#i-chevron"/></svg></summary><p>Belum. Halaman ini merupakan contoh landing page informasi dan inspirasi destinasi, bukan layanan pemesanan tiket atau akomodasi.</p></details><details><summary>Di mana mengecek harga tiket dan jadwal terbaru? <svg class="icon"><use href="#i-chevron"/></svg></summary><p>Periksa portal tiket resmi Borobudur untuk pilihan pelataran atau naik candi. Untuk Karimunjawa, lihat jadwal dan pengumuman operator kapal. Untuk Dieng dan Semarang, periksa pengumuman dinas atau pengelola objek wisata. Informasi dapat berubah.</p></details><details><summary>Bagaimana cara memilih destinasi? <svg class="icon"><use href="#i-chevron"/></svg></summary><p>Sesuaikan dengan waktu, anggaran, minat, dan cuaca. Baca bagian Panduan Wisata untuk mengetahui karakter tiap destinasi, lalu gunakan tautan situs resmi dan peta untuk menyusun rute.</p></details></div>
+    <section id="rencana" class="section-anchor mx-auto w-[min(1180px,calc(100%-40px))] py-20 sm:py-24" aria-labelledby="rencana-title">
+      <div class="mx-auto mb-10 max-w-[740px] text-center"><p class="eyebrow justify-center"><span class="eyebrow-dot"></span> RENCANAKAN PERJALANAN</p><h2 id="rencana-title" class="mt-5 font-display text-[clamp(32px,3.6vw,49px)] font-extrabold leading-tight tracking-[-0.055em]">Satu perjalanan, <span class="text-teal">banyak cerita.</span></h2><p class="mx-auto mt-5 max-w-[540px] text-[13px] leading-7 text-slate-500">Contoh inspirasi trip. Sesuaikan rute dan waktu dengan cuaca, pilihan transportasi, serta jam kunjung yang berlaku.</p></div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="trip-card group overflow-hidden rounded-[26px] border border-[#e2e9e4] bg-white p-6 shadow-[0_8px_30px_rgba(12,55,51,.04)] transition-transform hover:-translate-y-1 sm:p-7"><div class="flex items-center justify-between"><span class="text-[10px] font-extrabold uppercase tracking-[.15em] text-teal">01 / Heritage</span><span class="inline-flex items-center gap-1.5 rounded-full bg-mint px-3 py-1.5 text-[10px] font-bold text-forest"><svg class="icon size-3.5"><use href="#i-clock"/></svg> 1 Hari</span></div><div class="trip-image photo-borobudur mt-6 h-40 rounded-2xl"></div><h3 class="mt-6 font-display text-[21px] font-extrabold tracking-[-.04em]">Sehari di Magelang</h3><p class="mt-3 min-h-[66px] text-[12px] leading-7 text-slate-500">Kunjungi kawasan Borobudur, nikmati kuliner setempat, dan jelajahi desa sekitar.</p><a href="#tips" class="mt-5 inline-flex items-center gap-2 text-[12px] font-extrabold text-forest hover:text-teal">Lihat tips persiapan <svg class="icon size-4"><use href="#i-arrow"/></svg></a></article>
+        <article class="trip-card group overflow-hidden rounded-[26px] border border-[#e2e9e4] bg-white p-6 shadow-[0_8px_30px_rgba(12,55,51,.04)] transition-transform hover:-translate-y-1 sm:p-7"><div class="flex items-center justify-between"><span class="text-[10px] font-extrabold uppercase tracking-[.15em] text-teal">02 / City Walk</span><span class="inline-flex items-center gap-1.5 rounded-full bg-mint px-3 py-1.5 text-[10px] font-bold text-forest"><svg class="icon size-3.5"><use href="#i-clock"/></svg> 2 Hari</span></div><div class="trip-image photo-semarang mt-6 h-40 rounded-2xl"></div><h3 class="mt-6 font-display text-[21px] font-extrabold tracking-[-.04em]">Akhir Pekan di Semarang</h3><p class="mt-3 min-h-[66px] text-[12px] leading-7 text-slate-500">Nikmati jalan kaki di Kota Lama, kunjungi ruang kreatif, dan cicipi kuliner lokal.</p><a href="#tips" class="mt-5 inline-flex items-center gap-2 text-[12px] font-extrabold text-forest hover:text-teal">Lihat tips persiapan <svg class="icon size-4"><use href="#i-arrow"/></svg></a></article>
+        <article class="trip-card group overflow-hidden rounded-[26px] border border-[#e2e9e4] bg-white p-6 shadow-[0_8px_30px_rgba(12,55,51,.04)] transition-transform hover:-translate-y-1 sm:p-7"><div class="flex items-center justify-between"><span class="text-[10px] font-extrabold uppercase tracking-[.15em] text-teal">03 / Island Escape</span><span class="inline-flex items-center gap-1.5 rounded-full bg-mint px-3 py-1.5 text-[10px] font-bold text-forest"><svg class="icon size-3.5"><use href="#i-clock"/></svg> 3 Hari*</span></div><div class="trip-image photo-karimunjawa mt-6 h-40 rounded-2xl"></div><h3 class="mt-6 font-display text-[21px] font-extrabold tracking-[-.04em]">Liburan ke Karimunjawa</h3><p class="mt-3 min-h-[66px] text-[12px] leading-7 text-slate-500">Jelajahi pulau dan pantai. Perhatikan jadwal kapal, kondisi cuaca, dan aturan konservasi.</p><a href="#tips" class="mt-5 inline-flex items-center gap-2 text-[12px] font-extrabold text-forest hover:text-teal">Lihat tips persiapan <svg class="icon size-4"><use href="#i-arrow"/></svg></a></article>
       </div>
+      <p class="mt-5 text-center text-[11px] leading-6 text-slate-500">*Durasi merupakan contoh, bukan paket wisata atau jaminan ketersediaan transportasi.</p>
     </section>
 
-
-    <section class="sources-section" id="sumber" aria-labelledby="sources-title">
-      <div class="container">
-        <div class="sources-heading"><div><span class="section-label">SUMBER & TRANSPARANSI</span><h2 id="sources-title">Dari mana data wisata ini berasal?</h2></div><p>Disusun dari referensi resmi. Tekan tautan untuk memeriksa isi, ketentuan terkini, atau pembaruan langsung dari lembaga pengelola.</p></div>
-        <div class="source-grid">
-          <div class="source-entry"><span>01 / Borobudur</span><a target="_blank" rel="noopener noreferrer" href="https://whc.unesco.org/en/list/592/">UNESCO World Heritage Centre <svg class="icon"><use href="#i-up-right"/></svg></a><a target="_blank" rel="noopener noreferrer" href="https://ticket.borobudurpark.com/id/">Portal tiket resmi Borobudur <svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          <div class="source-entry"><span>02 / Karimunjawa</span><a target="_blank" rel="noopener noreferrer" href="https://ksdae.kehutanan.go.id/kawasan-konservasi/100242018/">Ditjen KSDAE, profil kawasan <svg class="icon"><use href="#i-up-right"/></svg></a><a target="_blank" rel="noopener noreferrer" href="https://tnkarimunjawa.id/profil/index">Balai TN Karimunjawa <svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          <div class="source-entry"><span>03 / Dieng</span><a target="_blank" rel="noopener noreferrer" href="https://www.indonesia.travel/id/id/destination/java/central-java/dataran-tinggi-dieng">Portal resmi Indonesia Travel <svg class="icon"><use href="#i-up-right"/></svg></a></div>
-          <div class="source-entry"><span>04 / Kota Lama</span><a target="_blank" rel="noopener noreferrer" href="https://cagarbudaya.semarangkota.go.id/page/halaman/122">Data Cagar Budaya Semarang <svg class="icon"><use href="#i-up-right"/></svg></a><a target="_blank" rel="noopener noreferrer" href="https://pariwisata.semarangkota.go.id/frontend/web/index.php?id=105&amp;r=site%2Fdaya-tarik-wisata-description">Dinas Kebudayaan dan Pariwisata <svg class="icon"><use href="#i-up-right"/></svg></a></div>
+    <section id="panduan" class="section-anchor bg-[#f0f4f0] py-20 sm:py-24" aria-labelledby="panduan-title">
+      <div class="mx-auto w-[min(1180px,calc(100%-40px))]">
+        <div class="mx-auto max-w-[840px] text-center"><p class="eyebrow justify-center"><span class="eyebrow-dot"></span> PANDUAN DESTINASI</p><h2 id="panduan-title" class="mt-5 font-display text-[clamp(32px,3.5vw,48px)] font-extrabold leading-tight tracking-[-.055em]">Biar perjalananmu <span class="text-teal">lebih siap.</span></h2><p class="mx-auto mt-5 max-w-[750px] text-[13px] leading-7 text-slate-500">Baca sejarah, akses, aktivitas, dan ketentuan penting setiap destinasi. Harga tiket, jadwal kapal, dan aturan kunjungan dapat berubah, jadi selalu periksa sumber resmi sebelum berangkat.</p></div>
+        <nav class="mb-10 mt-9 flex flex-wrap justify-center gap-2" aria-label="Pilih panduan destinasi"><a href="#borobudur" class="guide-pill">Borobudur</a><a href="#karimunjawa" class="guide-pill">Karimunjawa</a><a href="#dieng" class="guide-pill">Dieng</a><a href="#kota-lama" class="guide-pill">Kota Lama Semarang</a></nav>
+        <article class="guide-panel mb-6" id="borobudur" aria-labelledby="borobudur-title">
+      <div class="guide-visual photo-borobudur" role="img" aria-label="Ilustrasi destinasi Candi Borobudur">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-7 right-7 text-white">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-2 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">01 / Destinasi Jawa Tengah</span>
+          <p class="mt-3 font-display text-[25px] font-extrabold tracking-[-.05em] sm:text-[31px]">Candi Borobudur</p>
         </div>
       </div>
+      <div class="guide-detail">
+        <div class="guide-kicker"><span>01 / WARISAN BUDAYA</span><span class="guide-status">UNESCO WORLD HERITAGE</span></div>
+        <h3 id="borobudur-title">Candi Borobudur</h3>
+        <p class="guide-summary">Borobudur merupakan candi Buddha yang dibangun pada abad ke-8 hingga ke-9 pada masa Wangsa Syailendra. Bangunan utamanya memiliki lima teras bujur sangkar, tiga pelataran melingkar, dan sebuah stupa utama. UNESCO mencatat 72 stupa berlubang pada pelataran melingkarnya.</p>
+        <dl class="guide-facts">
+<div><dt>Lokasi</dt><dd>Desa Borobudur, Kecamatan Borobudur, Kabupaten Magelang, Jawa Tengah</dd></div>
+<div><dt>Daya tarik</dt><dd>Relief batu, stupa, arsitektur Buddha, serta kawasan Candi Mendut dan Pawon</dd></div>
+<div><dt>Kegiatan</dt><dd>Mempelajari sejarah dan seni relief, wisata edukasi, fotografi sesuai ketentuan</dd></div>
+<div><dt>Akses</dt><dd>Perjalanan darat menuju kawasan Borobudur di Kabupaten Magelang</dd></div>
+</dl>
+        <div class="guide-alert"><strong>Perhatikan jenis tiket.</strong> Pengelola membedakan tiket <em>pelataran</em> dan tiket <em>naik candi</em>. Tiket pelataran tidak mencakup akses ke struktur candi. Periksa kuota, persyaratan, dan pilihan tanggal di situs resmi sebelum berkunjung.</div>
+        <div class="guide-links"><a class="guide-link guide-link-primary" href="https://ticket.borobudurpark.com/id/" rel="noopener noreferrer" target="_blank">Tiket resmi <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://whc.unesco.org/en/list/592/" rel="noopener noreferrer" target="_blank">Profil UNESCO <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Candi+Borobudur+Magelang" rel="noopener noreferrer" target="_blank">Lihat peta <svg class="icon"><use href="#i-pin"></use></svg></a></div>
+      </div>
+    </article>
+<article class="guide-panel mb-6" id="karimunjawa" aria-labelledby="karimunjawa-title">
+      <div class="guide-visual photo-karimunjawa" role="img" aria-label="Ilustrasi destinasi Kepulauan Karimunjawa">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-7 right-7 text-white">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-2 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">02 / Destinasi Jawa Tengah</span>
+          <p class="mt-3 font-display text-[25px] font-extrabold tracking-[-.05em] sm:text-[31px]">Kepulauan Karimunjawa</p>
+        </div>
+      </div>
+      <div class="guide-detail">
+        <div class="guide-kicker"><span>02 / WISATA BAHARI</span><span class="guide-status">TAMAN NASIONAL</span></div>
+        <h3 id="karimunjawa-title">Kepulauan Karimunjawa</h3>
+        <p class="guide-summary">Karimunjawa berada di Laut Jawa dan termasuk wilayah Kabupaten Jepara. Taman nasional ini melindungi ekosistem perairan, terumbu karang, hutan mangrove, dan hutan tropis dataran rendah. Kawasan ini dikelola dengan sistem zonasi konservasi.</p>
+        <dl class="guide-facts">
+<div><dt>Lokasi</dt><dd>Kecamatan Karimunjawa, Kabupaten Jepara, Jawa Tengah</dd></div>
+<div><dt>Daya tarik</dt><dd>Pantai pasir putih, terumbu karang, ekosistem mangrove, dan keanekaragaman ikan karang</dd></div>
+<div><dt>Kegiatan</dt><dd>Snorkeling pada zona yang diizinkan, wisata pantai, pengamatan alam, dan edukasi konservasi</dd></div>
+<div><dt>Akses</dt><dd>Perjalanan laut dari Pelabuhan Kartini, Jepara, menuju Karimunjawa; jadwal mengikuti operator kapal dan kondisi cuaca</dd></div>
+</dl>
+        <div class="guide-alert"><strong>Utamakan keselamatan dan konservasi.</strong> Periksa keberangkatan kapal, kondisi gelombang, dan ketentuan zona kunjungan. Jangan menginjak atau mengambil terumbu karang, serta ikuti arahan petugas dan pemandu.</div>
+        <div class="guide-links"><a class="guide-link guide-link-primary" href="https://tnkarimunjawa.id/profil/index" rel="noopener noreferrer" target="_blank">Balai taman nasional <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://ksdae.kehutanan.go.id/kawasan-konservasi/100242018/" rel="noopener noreferrer" target="_blank">Profil konservasi <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Karimunjawa+Jepara" rel="noopener noreferrer" target="_blank">Lihat peta <svg class="icon"><use href="#i-pin"></use></svg></a></div>
+      </div>
+    </article>
+<article class="guide-panel mb-6" id="dieng" aria-labelledby="dieng-title">
+      <div class="guide-visual photo-dieng" role="img" aria-label="Ilustrasi destinasi Dataran Tinggi Dieng">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-7 right-7 text-white">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-2 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">03 / Destinasi Jawa Tengah</span>
+          <p class="mt-3 font-display text-[25px] font-extrabold tracking-[-.05em] sm:text-[31px]">Dataran Tinggi Dieng</p>
+        </div>
+      </div>
+      <div class="guide-detail">
+        <div class="guide-kicker"><span>03 / DATARAN TINGGI</span><span class="guide-status">KAWASAN VULKANIK</span></div>
+        <h3 id="dieng-title">Dataran Tinggi Dieng</h3>
+        <p class="guide-summary">Dieng merupakan dataran tinggi vulkanik di wilayah Kabupaten Wonosobo dan Kabupaten Banjarnegara dengan elevasi sekitar 2.000–2.100 meter di atas permukaan laut. Kawasan ini terkenal karena kombinasi bentang alam vulkanik dan peninggalan sejarah Hindu.</p>
+        <dl class="guide-facts">
+<div><dt>Lokasi</dt><dd>Wilayah Kabupaten Wonosobo dan Banjarnegara, Jawa Tengah</dd></div>
+<div><dt>Daya tarik</dt><dd>Kompleks Candi Arjuna, Kawah Sikidang, Telaga Warna, dan perbukitan</dd></div>
+<div><dt>Kegiatan</dt><dd>Wisata geologi, pengamatan lanskap, kunjungan candi, dan belajar budaya lokal</dd></div>
+<div><dt>Akses</dt><dd>Umumnya melalui jalur darat dari Wonosobo ke kawasan Dieng; jalan pegunungan menanjak dan berkelok</dd></div>
+</dl>
+        <div class="guide-alert"><strong>Waspadai kondisi kawah.</strong> Dieng memiliki aktivitas vulkanik. Patuhi zona aman, papan larangan, pemberitahuan petugas, serta informasi resmi terkait kondisi gas kawah dan cuaca. Siapkan pakaian hangat.</div>
+        <div class="guide-links"><a class="guide-link guide-link-primary" href="https://www.indonesia.travel/id/id/destination/java/central-java/dataran-tinggi-dieng" rel="noopener noreferrer" target="_blank">Panduan pariwisata resmi <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Dataran+Tinggi+Dieng" rel="noopener noreferrer" target="_blank">Lihat peta <svg class="icon"><use href="#i-pin"></use></svg></a></div>
+      </div>
+    </article>
+<article class="guide-panel mb-6" id="kota-lama" aria-labelledby="kotalama-title">
+      <div class="guide-visual photo-semarang" role="img" aria-label="Ilustrasi destinasi Kota Lama Semarang">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-7 right-7 text-white">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-2 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">04 / Destinasi Jawa Tengah</span>
+          <p class="mt-3 font-display text-[25px] font-extrabold tracking-[-.05em] sm:text-[31px]">Kota Lama Semarang</p>
+        </div>
+      </div>
+      <div class="guide-detail">
+        <div class="guide-kicker"><span>04 / WISATA HERITAGE</span><span class="guide-status">CAGAR BUDAYA KOTA</span></div>
+        <h3 id="kotalama-title">Kota Lama Semarang</h3>
+        <p class="guide-summary">Kota Lama Semarang merupakan kawasan bersejarah yang dikenal dengan peninggalan arsitektur masa kolonial. Salah satu bangunan pentingnya adalah Gereja Blenduk atau GPIB Immanuel. Catatan cagar budaya Kota Semarang menelusuri bangunan awal gereja ini hingga tahun 1753.</p>
+        <dl class="guide-facts">
+<div><dt>Lokasi</dt><dd>Kawasan sekitar Jalan Letjen Suprapto, Semarang Utara, Kota Semarang, Jawa Tengah</dd></div>
+<div><dt>Daya tarik</dt><dd>Gereja Blenduk, Taman Srigunting, dan deretan bangunan cagar budaya</dd></div>
+<div><dt>Kegiatan</dt><dd>Wisata jalan kaki, belajar sejarah kota, fotografi arsitektur, dan kuliner sekitar</dd></div>
+<div><dt>Akses</dt><dd>Dapat dicapai melalui perjalanan darat menuju kawasan Kota Lama Semarang</dd></div>
+</dl>
+        <div class="guide-alert"><strong>Hormati bangunan dan kegiatan warga.</strong> Kawasan jalan dan ruang publik berbeda dari bangunan yang memiliki aturan masuk masing-masing. Gereja Blenduk masih digunakan untuk kegiatan keagamaan; jaga ketertiban dan ikuti ketentuan setempat.</div>
+        <div class="guide-links"><a class="guide-link guide-link-primary" href="https://cagarbudaya.semarangkota.go.id/page/halaman/122" rel="noopener noreferrer" target="_blank">Data cagar budaya <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://pariwisata.semarangkota.go.id/frontend/web/index.php?id=105&amp;r=site%2Fdaya-tarik-wisata-description" rel="noopener noreferrer" target="_blank">Dinas pariwisata <svg class="icon"><use href="#i-up-right"></use></svg></a><a class="guide-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kota+Lama+Semarang" rel="noopener noreferrer" target="_blank">Lihat peta <svg class="icon"><use href="#i-pin"></use></svg></a></div>
+      </div>
+    </article>
+        <p class="mt-8 flex items-start gap-3 rounded-xl border border-[#d7e6d9] bg-white p-5 text-[12px] leading-7 text-slate-500"><svg class="icon mt-1 size-5 shrink-0 text-teal"><use href="#i-check"/></svg><span>Informasi berasal dari UNESCO, situs pemerintah, pengelola tiket, dan Balai Taman Nasional. Referensi diperiksa pada <strong class="text-ink">17 November 2026</strong>. Situs ini merupakan proyek edukasi, bukan website resmi pengelola atau layanan pemesanan.</span></p>
+      </div>
     </section>
 
-    <section class="final-cta" aria-labelledby="final-title"><div class="container final-cta-inner"><div><span>YOUR NEXT STORY STARTS HERE</span><h2 id="final-title">Sudah siap untuk <em>cerita berikutnya?</em></h2><p>Destinasi menarik tidak selalu jauh. Mulai petualangan dari Jawa Tengah.</p></div><a class="button button-white" href="#destinasi">Temukan tujuanmu <svg class="icon"><use href="#i-arrow"/></svg></a><div class="cta-decoration" aria-hidden="true">✳</div></div></section>
+    <section id="tips" class="section-anchor mx-auto grid w-[min(1180px,calc(100%-40px))] gap-12 py-20 sm:py-24 lg:grid-cols-[.85fr_1.15fr] lg:gap-20" aria-labelledby="tips-title">
+      <div><p class="eyebrow"><span class="eyebrow-dot"></span> SEBELUM BERANGKAT</p><h2 id="tips-title" class="mt-5 font-display text-[clamp(32px,3.5vw,47px)] font-extrabold leading-[1.22] tracking-[-.055em]">Persiapkan trip, <span class="text-teal">nikmati momennya.</span></h2><p class="mt-5 text-[13px] leading-7 text-slate-500">Periksa kondisi perjalanan sebelum menentukan tanggal dan berangkat ke lokasi wisata.</p><div class="mt-7 flex flex-wrap gap-2"><span class="tip-pill"><svg class="icon size-3.5"><use href="#i-check"/></svg> Cek cuaca</span><span class="tip-pill"><svg class="icon size-3.5"><use href="#i-check"/></svg> Jam kunjung</span><span class="tip-pill"><svg class="icon size-3.5"><use href="#i-check"/></svg> Transportasi</span><span class="tip-pill"><svg class="icon size-3.5"><use href="#i-check"/></svg> Aturan kawasan</span></div></div>
+      <div class="overflow-hidden rounded-[26px] border border-[#dfe9e3] bg-white shadow-[0_12px_40px_rgba(12,55,51,.04)]">
+        <details class="faq-item group border-b border-[#e5ede8] p-6 sm:px-8"><summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-[14px] font-extrabold [&::-webkit-details-marker]:hidden">Apakah website ini menjual tiket wisata?<span class="grid size-9 shrink-0 place-items-center rounded-full bg-mint text-forest"><svg class="icon size-4 transition-transform group-open:rotate-180"><use href="#i-chevron"/></svg></span></summary><p class="mt-4 max-w-[560px] text-[12px] leading-7 text-slate-500">Tidak. Ruang Jelajah menyajikan informasi wisata dan inspirasi perjalanan. Pemesanan tiket dilakukan melalui kanal resmi pengelola terkait.</p></details>
+        <details class="faq-item group border-b border-[#e5ede8] p-6 sm:px-8"><summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-[14px] font-extrabold [&::-webkit-details-marker]:hidden">Di mana menemukan harga tiket terbaru?<span class="grid size-9 shrink-0 place-items-center rounded-full bg-mint text-forest"><svg class="icon size-4 transition-transform group-open:rotate-180"><use href="#i-chevron"/></svg></span></summary><p class="mt-4 max-w-[560px] text-[12px] leading-7 text-slate-500">Gunakan tautan pengelola pada setiap panduan. Untuk Borobudur, perhatikan perbedaan tiket pelataran dan naik candi. Untuk Karimunjawa, pastikan jadwal kapal dan kondisi laut.</p></details>
+        <details class="faq-item group border-b border-[#e5ede8] p-6 sm:px-8"><summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-[14px] font-extrabold [&::-webkit-details-marker]:hidden">Bagaimana memilih destinasi yang sesuai?<span class="grid size-9 shrink-0 place-items-center rounded-full bg-mint text-forest"><svg class="icon size-4 transition-transform group-open:rotate-180"><use href="#i-chevron"/></svg></span></summary><p class="mt-4 max-w-[560px] text-[12px] leading-7 text-slate-500">Sesuaikan durasi, minat, cuaca, transportasi, dan aturan yang berlaku. Baca rincian destinasi, lalu periksa peta dan jadwal sebelum menyusun perjalanan.</p></details>
+        <details class="faq-item group p-6 sm:px-8"><summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-[14px] font-extrabold [&::-webkit-details-marker]:hidden">Apakah informasi dapat berubah?<span class="grid size-9 shrink-0 place-items-center rounded-full bg-mint text-forest"><svg class="icon size-4 transition-transform group-open:rotate-180"><use href="#i-chevron"/></svg></span></summary><p class="mt-4 max-w-[560px] text-[12px] leading-7 text-slate-500">Ya. Tiket, akses, fasilitas, dan pembatasan kunjungan dapat berubah sewaktu-waktu. Gunakan tautan resmi sebagai rujukan sebelum keberangkatan.</p></details>
+      </div>
+    </section>
+
+    <section id="sumber" class="section-anchor bg-[#eaf2ed] py-20 sm:py-24" aria-labelledby="sumber-title"><div class="mx-auto w-[min(1180px,calc(100%-40px))]"><div class="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><p class="eyebrow"><span class="eyebrow-dot"></span> DATA &amp; TRANSPARANSI</p><h2 id="sumber-title" class="mt-5 font-display text-[clamp(30px,3.3vw,45px)] font-extrabold tracking-[-.055em]">Sumber informasi <span class="text-teal">tepercaya.</span></h2></div><p class="max-w-[380px] text-[12px] leading-7 text-slate-500">Referensi disediakan agar informasi perjalanan dapat dicek langsung pada lembaga terkait.</p></div>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div class="source-card"><p>01 / BOROBUDUR</p><a href="https://whc.unesco.org/en/list/592/" target="_blank" rel="noopener noreferrer">UNESCO World Heritage Centre <svg class="icon size-4"><use href="#i-up-right"/></svg></a><a href="https://ticket.borobudurpark.com/id/" target="_blank" rel="noopener noreferrer">Portal tiket resmi <svg class="icon size-4"><use href="#i-up-right"/></svg></a></div>
+        <div class="source-card"><p>02 / KARIMUNJAWA</p><a href="https://tnkarimunjawa.id/profil/index" target="_blank" rel="noopener noreferrer">Balai TN Karimunjawa <svg class="icon size-4"><use href="#i-up-right"/></svg></a><a href="https://ksdae.kehutanan.go.id/kawasan-konservasi/100242018/" target="_blank" rel="noopener noreferrer">Ditjen KSDAE <svg class="icon size-4"><use href="#i-up-right"/></svg></a></div>
+        <div class="source-card"><p>03 / DIENG</p><a href="https://www.indonesia.travel/id/id/destination/java/central-java/dataran-tinggi-dieng" target="_blank" rel="noopener noreferrer">Portal Indonesia Travel <svg class="icon size-4"><use href="#i-up-right"/></svg></a></div>
+        <div class="source-card"><p>04 / KOTA LAMA</p><a href="https://cagarbudaya.semarangkota.go.id/page/halaman/122" target="_blank" rel="noopener noreferrer">Data Cagar Budaya <svg class="icon size-4"><use href="#i-up-right"/></svg></a><a href="https://pariwisata.semarangkota.go.id/frontend/web/index.php?id=105&amp;r=site%2Fdaya-tarik-wisata-description" target="_blank" rel="noopener noreferrer">Dinas Pariwisata <svg class="icon size-4"><use href="#i-up-right"/></svg></a></div>
+      </div></div></section>
+
+    <section class="bg-ink py-20 text-white" aria-labelledby="penutup-title"><div class="mx-auto flex w-[min(1180px,calc(100%-40px))] flex-col items-start justify-between gap-8 lg:flex-row lg:items-center"><div><p class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-coral">YOUR NEXT STORY STARTS HERE</p><h2 id="penutup-title" class="mt-4 font-display text-[clamp(33px,4.2vw,58px)] font-extrabold leading-tight tracking-[-.055em]">Jelajah lebih jauh.<br><span class="text-coral">Kenali lebih dekat.</span></h2><p class="mt-4 text-[13px] text-white/60">Mulai dari Jawa Tengah dan susun kisah perjalananmu sendiri.</p></div><a class="inline-flex items-center gap-3 rounded-full bg-coral px-7 py-4 text-[13px] font-extrabold text-ink transition-transform hover:-translate-y-1" href="#destinasi">Temukan destinasi <svg class="icon size-5"><use href="#i-arrow"/></svg></a></div></section>
   </main>
-
-  <footer class="site-footer"><div class="container footer-content"><div class="footer-about"><a class="brand" href="#beranda" aria-label="Ruang Jelajah, kembali ke beranda"><span class="brand-icon"><svg class="icon"><use href="#i-compass"/></svg></span><span>ruang<span class="brand-accent">jelajah.</span></span></a><p>Inspirasi perjalanan untuk mengenal pesona, budaya, dan cerita dari Jawa Tengah.</p></div><nav class="footer-nav" aria-label="Navigasi footer"><a href="#destinasi">Destinasi</a><a href="#panduan">Panduan Wisata</a><a href="#rencana">Ide Trip</a><a href="#sumber">Sumber Data</a></nav></div><div class="container footer-bottom"><span>© 2026 Ruang Jelajah. Proyek edukasi HTML & CSS.</span><span>Made to explore, built to learn.</span><a href="#sumber">Sumber data</a><a href="KREDIT-FOTO.md" aria-label="Lihat kredit foto dan lisensi">Kredit foto</a></div></footer>
+  <footer class="border-t border-white/10 bg-[#071d22] pb-8 pt-14 text-white"><div class="mx-auto flex w-[min(1180px,calc(100%-40px))] flex-col justify-between gap-8 border-b border-white/10 pb-10 md:flex-row"><div class="max-w-[390px]"><a href="#beranda" class="inline-flex items-center gap-2.5"><span class="grid size-9 place-items-center rounded-full border border-white/30 text-coral"><svg class="icon size-5"><use href="#i-compass"/></svg></span><span class="font-display text-[20px] font-extrabold tracking-[-1px]">ruang<span class="text-coral">jelajah.</span></span></a><p class="mt-4 text-[12px] leading-7 text-white/50">Panduan mengenal destinasi Jawa Tengah, disusun sebagai proyek edukasi berbasis HTML dan Tailwind CSS.</p></div><nav aria-label="Navigasi footer" class="flex flex-wrap items-start gap-x-6 gap-y-3 text-[12px] font-semibold text-white/65"><a class="hover:text-coral" href="#destinasi">Destinasi</a><a class="hover:text-coral" href="#panduan">Panduan Wisata</a><a class="hover:text-coral" href="#rencana">Ide Trip</a><a class="hover:text-coral" href="#sumber">Sumber Data</a></nav></div><div class="mx-auto flex w-[min(1180px,calc(100%-40px))] flex-col justify-between gap-3 pt-6 text-[11px] text-white/45 sm:flex-row"><p>© 2026 Ruang Jelajah. Proyek edukasi, bukan penyedia layanan wisata.</p><p>Visual media: <a class="underline underline-offset-4 hover:text-white" href="KREDIT-FOTO.md">kredit foto</a> · <a class="underline underline-offset-4 hover:text-white" href="CATATAN-DATA.md">catatan data</a></p></div></footer>
 </body>
 </html>

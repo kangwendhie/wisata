@@ -1,45 +1,75 @@
-# Ruang Jelajah | Landing Page Pariwisata Jawa Tengah
+# Ruang Jelajah: Landing Page Tailwind CSS
 
-Website informasi wisata berbasis HTML5 dan **CSS eksternal**. Tidak menggunakan framework atau JavaScript. Edisi informasi destinasi diverifikasi pada **17 November 2026**.
+Landing page informasi pariwisata Jawa Tengah yang menggunakan **HTML5 dan Tailwind CSS v4**. Konten destinasi dan tautan ke situs resmi dipertahankan dari versi sebelumnya. Desain diperbarui dengan tema hijau gelap, kartu destinasi bergaya editorial, panduan wisata lengkap, menu mobile, dan FAQ interaktif.
 
-## Destinasi yang dibahas
+## Cara menjalankan
 
-1. **Candi Borobudur, Kabupaten Magelang:** Candi Buddha abad ke-8 sampai ke-9; sejarah dan arsitektur; perbedaan tiket pelataran dan naik candi.
-2. **Karimunjawa, Kabupaten Jepara:** Taman nasional, wisata bahari, terumbu karang, mangrove, transportasi kapal, dan etika konservasi.
-3. **Dataran Tinggi Dieng, Wonosobo dan Banjarnegara:** Kawasan vulkanik, Kompleks Candi Arjuna, Telaga Warna, Kawah Sikidang, dan kewaspadaan keselamatan.
-4. **Kota Lama Semarang:** Gereja Blenduk, Taman Srigunting, arsitektur cagar budaya, dan wisata sejarah.
+1. Ekstrak seluruh file proyek.
+2. Buka `index.html` langsung melalui browser, atau jalankan ekstensi **Live Server** di Visual Studio Code.
+3. Situs sudah menggunakan `style.css` hasil build Tailwind, sehingga **tidak perlu memasang Node.js** hanya untuk melihat atau mengunggahnya.
+4. Gambar tetap memiliki ilustrasi SVG lokal saat foto dari Wikimedia Commons tidak dapat diakses. Font Google memakai fallback sistem jika offline.
 
-Tiap kartu destinasi menautkan ke panduan mendalam yang memuat lokasi, daya tarik, kegiatan, akses, tips keselamatan, tautan peta, serta referensi resmi.
+## Deploy ke GitHub Pages
 
-## Jalankan secara lokal
+1. Buat repository **Public**, misalnya `ruang-jelajah`.
+2. Unggah `index.html`, `style.css`, folder `assets`, dan dokumen yang disertakan ke direktori utama repository. Pastikan jangan hanya mengunggah ZIP atau satu folder pembungkus.
+3. Buka **Settings > Pages > Build and deployment**.
+4. Atur **Source: Deploy from a branch**, **Branch: main**, **Folder: /(root)**, kemudian klik **Save**.
+5. Setelah deployment selesai, kunjungi `https://USERNAME.github.io/ruang-jelajah/` dengan mengganti `USERNAME` menggunakan username GitHub.
 
-Buka `index.html` di browser. Biarkan `style.css` dan folder `assets` pada lokasi yang sama relatif terhadap `index.html`.
+Karena CSS Tailwind sudah dikompilasi, GitHub Pages tidak perlu menjalankan npm saat deployment.
 
-## Publikasi menggunakan GitHub Pages
+## Cara mengedit dengan Tailwind CSS
 
-1. Buat repository **public**, misalnya `ruang-jelajah`.
-2. Unggah **isi folder `jelajah-jateng`** ke akar repository. Pastikan `index.html` berada di akar, bukan di dalam subfolder.
-3. Buka **Settings → Pages**.
-4. Di bagian **Build and deployment**, pilih **Deploy from a branch**, **main**, dan **/(root)** lalu simpan.
-5. Akses `https://USERNAME.github.io/ruang-jelajah/` setelah GitHub Pages selesai menerbitkan situs.
+Sumber pengaturan Tailwind berada di `src/input.css`. Ubah kelas utilitas di `index.html` atau aturan tema di `src/input.css`, lalu jalankan:
 
-Jika hanya mengunggah ZIP, GitHub Pages tidak akan mengekstraknya. Unggah file hasil ekstraksi.
+```bash
+npm install
+npm run build
+```
 
-## Sumber informasi destinasi
+Untuk menyusun ulang CSS otomatis saat mengedit:
 
-- UNESCO, Borobudur Temple Compounds: https://whc.unesco.org/en/list/592/
-- Portal tiket resmi Candi Borobudur: https://ticket.borobudurpark.com/id/
-- Ditjen KSDAE, Taman Nasional Karimunjawa: https://ksdae.kehutanan.go.id/kawasan-konservasi/100242018/
-- Balai Taman Nasional Karimunjawa: https://tnkarimunjawa.id/profil/index
-- Indonesia Travel, Dataran Tinggi Dieng: https://www.indonesia.travel/id/id/destination/java/central-java/dataran-tinggi-dieng
-- Pemerintah Kota Semarang, Cagar Budaya Gereja Blenduk: https://cagarbudaya.semarangkota.go.id/page/halaman/122
-- Dinas Kebudayaan dan Pariwisata Kota Semarang: https://pariwisata.semarangkota.go.id/frontend/web/index.php?id=105&r=site%2Fdaya-tarik-wisata-description
+```bash
+npm run dev
+```
 
-**Penting:** Harga tiket, jadwal operasional, jadwal kapal, dan pembatasan akses sangat mungkin berubah. Untuk menghindari penyebaran data kedaluwarsa, proyek ini mengarahkan pengunjung ke laman resmi pengelola. Situs ini merupakan proyek edukasi dan bukan situs resmi pengelola destinasi atau platform pemesanan.
+**Penting:** setelah menjalankan build lokal, lakukan commit **index.html, src/input.css, dan style.css** agar tampilan baru muncul di GitHub Pages. `node_modules` tidak perlu diunggah.
 
-## Berkas
+## Struktur proyek
 
-- `index.html`: keseluruhan struktur halaman dan konten.
-- `style.css`: desain, animasi sederhana, dan layout responsif.
-- `assets/`: ilustrasi SVG cadangan untuk foto yang tidak dapat dimuat.
-- `KREDIT-FOTO.md`: daftar sumber foto eksternal.
+```
+ruang-jelajah/
+├── index.html              # Halaman utama
+├── style.css               # CSS Tailwind v4 terkompilasi, siap deploy
+├── src/
+│   └── input.css           # Sumber Tailwind, tema dan CSS tambahan
+├── assets/
+│   ├── borobudur.svg       # Fallback visual destinasi
+│   ├── karimunjawa.svg
+│   ├── dieng.svg
+│   ├── semarang.svg
+│   └── favicon.svg
+├── package.json            # Build Tailwind CLI
+├── .gitignore
+├── README.md
+├── CATATAN-DATA.md         # Referensi dan tanggal verifikasi konten
+└── KREDIT-FOTO.md          # Rujukan media fotografi
+```
+
+## Konten dan sumber
+
+- **Borobudur:** situs Warisan Dunia UNESCO dan portal tiket Borobudur.
+- **Karimunjawa:** Balai Taman Nasional dan Ditjen KSDAE.
+- **Dieng:** portal resmi Indonesia Travel.
+- **Kota Lama Semarang:** Pemerintah Kota Semarang dan data cagar budaya.
+
+Harga tiket, jadwal kapal, atau aturan kunjungan bisa berubah. Konten memberikan tautan resmi agar pengunjung dapat memeriksa keadaan terbaru. Informasi ini tidak menyatakan adanya layanan pemesanan dari website.
+
+## Catatan teknis
+
+- Tailwind CSS v4 digunakan sebagai utilitas desain dan telah dikompilasi ke `style.css` untuk deployment statis.
+- Tidak menggunakan Tailwind Play CDN karena ditujukan untuk pengembangan, bukan publikasi produksi.
+- Menu mobile dan FAQ menggunakan elemen `<details>` HTML sehingga dapat berfungsi tanpa JavaScript tambahan.
+- Path CSS, ikon, dan gambar menggunakan path relatif agar kompatibel dengan repository GitHub Pages yang memakai subfolder.
+- Desain responsif pada layar desktop maupun mobile, menyertakan tautan lompat konten, label navigasi, dan dukungan preferensi reduced motion.

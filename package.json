@@ -1,0 +1,14 @@
+{
+  "name": "ruang-jelajah-tailwind",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Landing page pariwisata Jawa Tengah dengan Tailwind CSS v4 yang siap diterbitkan melalui GitHub Pages.",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.10",
+    "@tailwindcss/cli": "^4.1.10"
+  }
+}

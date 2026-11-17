@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@source "../index.html";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0b282d;
+  --color-forest: #184e46;
+  --color-teal: #287865;
+  --color-mint: #e2f2e9;
+  --color-ivory: #fbfaf6;
+  --color-coral: #ffca86;
+  --color-coral-light: #ffe1ad;
+}
+
+@layer base {
+  html { scroll-padding-top: 88px; }
+  body { min-width: 320px; }
+  a { text-decoration: none; }
+  summary:focus-visible, a:focus-visible { outline: 3px solid #ffca86; outline-offset: 4px; }
+}
+
+@layer components {
+  .icon { width: 1em; height: 1em; display: inline-block; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 800; letter-spacing: .17em; color: #287865; }
+  .eyebrow-dot { width: 18px; height: 2px; background: #d1975a; display: inline-block; }
+  .nav-link { transition: color .2s; }
+  .nav-link:hover { color: #ffca86; }
+  .section-anchor { scroll-margin-top: 76px; }
+  .hero-glow { background: radial-gradient(circle,#26796b,transparent 65%); }
+  .photo-tile, .destination-tile, .experience-visual, .trip-image, .guide-visual { background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #8ebbb3; }
+  .photo-borobudur { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur_temple_from_the_west%2C_September_2026.jpg?width=1200'), url('assets/borobudur.svg'); }
+  .photo-karimunjawa { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Pantai_tanjung_gelam_Taman_Nasional_Karimunjawa.jpg?width=1200'), url('assets/karimunjawa.svg'); }
+  .photo-dieng { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Telaga_Warna_Dieng_Jawa_Tengah.jpg?width=1200'), url('assets/dieng.svg'); }
+  .photo-semarang { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Gereja_Blenduk_Di_Kota_Lama.jpg?width=1200'), url('assets/semarang.svg'); }
+  .destination-tile { background-size: cover; background-position: center; transition: background-size .4s, transform .3s, box-shadow .3s; }
+  .destination-tile:hover { transform: translateY(-4px); box-shadow: 0 20px 45px rgba(8,43,36,.14); }
+  .tile-overlay { background: linear-gradient(180deg,rgba(3,28,28,.12),rgba(3,28,28,.04) 37%,rgba(3,28,28,.86)); }
+  .guide-pill { display: inline-flex; align-items: center; border: 1px solid #d5e4da; border-radius: 999px; padding: 11px 18px; background: #fff; color: #255b50; font-size: 12px; font-weight: 800; transition: background .2s, color .2s; }
+  .guide-pill:hover { background: #184e46; color: #fff; }
+  .guide-panel { display: grid; grid-template-columns: minmax(250px,.82fr) minmax(0,1.18fr); overflow: hidden; border-radius: 28px; background: #fff; border: 1px solid #d9e7dd; box-shadow: 0 12px 45px rgba(12,55,51,.045); scroll-margin-top: 95px; }
+  .guide-visual { min-height: 560px; position: relative; }
+  .guide-detail { padding: 36px 38px; }
+  .guide-kicker { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; font-size: 10px; font-weight: 800; letter-spacing: .08em; color: #67948a; }
+  .guide-status { background: #e6f3ec; color: #287865; padding: 7px 10px; border-radius: 8px; font-size: 9px; letter-spacing: 0; }
+  .guide-detail h3 { font: 800 clamp(24px,2.6vw,34px)/1.2 "Plus Jakarta Sans",sans-serif; letter-spacing: -.055em; margin-top: 18px; color: #0b282d; }
+  .guide-summary { font-size: 12.5px; line-height: 2; color: #687c76; margin-top: 15px; }
+  .guide-facts { margin-top: 20px; }
+  .guide-facts > div { display: grid; grid-template-columns: 85px minmax(0,1fr); gap: 12px; padding: 12px 0; border-top: 1px solid #e8eee9; }
+  .guide-facts dt { font-size: 11px; font-weight: 800; color: #287865; }
+  .guide-facts dd { font-size: 11.5px; line-height: 1.8; color: #61766f; }
+  .guide-alert { margin-top: 16px; border-left: 3px solid #dca969; border-radius: 12px; background: #fff7eb; padding: 15px 17px; font-size: 11.5px; line-height: 1.8; color: #78664b; }
+  .guide-alert strong { color: #6c5031; }
+  .guide-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+  .guide-link { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #dce9e0; border-radius: 999px; background: #f4f9f5; padding: 11px 14px; font-size: 11px; font-weight: 800; color: #2b6756; transition: background .2s, transform .2s; }
+  .guide-link:hover { background: #e1f1e8; transform: translateY(-2px); }
+  .guide-link-primary { background: #184e46; border-color: #184e46; color: #fff; }
+  .guide-link-primary:hover { background: #287865; }
+  .guide-link .icon { height: 13px; width: 13px; }
+  .tip-pill { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: #e6f2eb; padding: 10px 13px; font-size: 11px; font-weight: 800; color: #235d4d; }
+  .source-card { min-height: 160px; border: 1px solid #d9e5dc; border-radius: 20px; background: #fff; padding: 23px 20px; }
+  .source-card p { margin-bottom: 17px; font-size: 10px; font-weight: 800; letter-spacing: .13em; color: #b18458; }
+  .source-card a { display: flex; align-items: flex-start; justify-content: space-between; gap: 9px; border-top: 1px solid #e9eee9; padding: 12px 0; font-size: 11px; line-height: 1.7; font-weight: 800; color: #285e51; }
+  .source-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
+}
+
+@media (max-width: 900px) {
+  .guide-panel { grid-template-columns: 1fr; }
+  .guide-visual { min-height: 330px; max-height: 400px; }
+}
+@media (max-width: 560px) {
+  .guide-detail { padding: 27px 22px 30px; }
+  .guide-facts > div { grid-template-columns: 1fr; gap: 4px; }
+  .guide-visual { min-height: 255px; max-height: 310px; }
+  .guide-link { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
